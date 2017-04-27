@@ -1,0 +1,23 @@
+/* main.css */
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.jumbotron {
+    background-image: url("../img/RainierSummit.jpg");
+}
+
+#jumbo {
+    color: black;
+}
+
+
+/*I may want to work on this text color a bit more 
+    or choose s different background image*/
