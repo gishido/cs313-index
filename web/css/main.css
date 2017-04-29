@@ -12,10 +12,15 @@
 
 .jumbotron {
     background-image: url("../img/RainierSummit.jpg");
+    margin-top: 50px;
 }
 
 #jumbo {
     color: black;
+}
+
+#firstRow {
+    margin-top: 50px;
 }
 
 

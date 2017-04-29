@@ -15,7 +15,7 @@
   <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-  <!-- referencing bootstrap's navbar -->
+   <!-- referencing bootstrap's navbar -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,7 +26,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Adam Shumway</a>
+      <a class="navbar-brand" href="index.php">Adam Shumway</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -43,7 +43,7 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="assignments.html">All Assigments</a></li>
           </ul>
         </li>
       </ul>
