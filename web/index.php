@@ -56,13 +56,13 @@
     <div class="jumbotron text-center">
       <div class="container">
         <h1>CS313</h1>
-        <p id="jumbo"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et illum ullam accusantium esse</p>
+        <p id="jumbo"> A personal landing page for Adam Shumway</p>
       </div>
     </div>
   <!-- interests row -->
-  <div class="container">
+  <div class="container" id="intrests">
     <div class="row">
-      <h1>Interestes</h1>
+      <p>Intrests</p>
       <hr>
     </div>
   </div>

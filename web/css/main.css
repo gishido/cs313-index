@@ -15,12 +15,18 @@ body {
 }
 
 .jumbotron {
-    background-image: url("../img/RainierSummit.jpg");
+    background-image: url("../img/RainierSummit-md-lg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
     margin-top: 50px;
+    color: #fff;
+    text-shadow: 3px 3px #000;
 }
 
 #jumbo {
-    color: black;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 #firstRow {
@@ -37,13 +43,20 @@ body {
     text-align: center;
 }
 
-#showcase .section1-right,
-.section2-left {
-    margin-top: 100px;
+#showcase .section1-right {
+    margin-top: 90px;
+}
+
+#showcase .section2-left {
+    margin-top: 80px;
 }
 
 #showcase .section3-right {
-    margin-top: 170px;
+    margin-top: 150px;
+}
+
+#intrests p {
+    font-size: 48px;
 }
 
 
