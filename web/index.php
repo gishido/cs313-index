@@ -59,12 +59,65 @@
         <p id="jumbo"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et illum ullam accusantium esse</p>
       </div>
     </div>
-  <!-- row -->
+  <!-- interests row -->
   <div class="container">
     <div class="row">
-      <p>here is some content and you will super love it here</p>
+      <h1>Interestes</h1>
+      <hr>
     </div>
   </div>
+
+  <!-- section 1 -->
+  <section id="showcase">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="section1-left">
+            <img src="img/backpacking-guy.jpg">
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="section1-right">
+            <h1>Backpacking</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section 2 -->
+  <section id="showcase">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="section2-left">
+            <h1>Video Games</h1>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="section2-right">
+            <img src="img/videogames.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- section 2 -->
+  <section id="showcase">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6">
+          <div class="section3-left">
+            <img src="img/lds-family-clipart.png">
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="section3-right">
+            <h1>Family</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
 
 </body>
