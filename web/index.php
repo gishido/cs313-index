@@ -37,7 +37,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assignments <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="shopping.html">Prove03 - Shopping Cart</a></li>
+            <li><a href="shopping.php">Prove03 - Shopping Cart</a></li>
 <!--            <li><a href="#">Assignment 2</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
