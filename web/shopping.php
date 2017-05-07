@@ -131,6 +131,21 @@
             </div>
         </div>
     </div>
+    <!-- cart preview -->
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Cart</div>
+
+            <!-- Table -->
+            <table class="table">
+                ...
+            </table>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
