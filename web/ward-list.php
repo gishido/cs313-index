@@ -6,8 +6,10 @@
     <head>
     </head>
     <body> 
-    <h1>Camper List</h1>
+    <h1>Ward List</h1>
         <?php
+/*            echo 'session "list" value is: '.$_SESSION['list'];
+            echo '<br>';*/
 
             // default Heroku Postgres configuration URL
             $dbUrl = getenv('DATABASE_URL');
@@ -37,8 +39,18 @@
             die();
             }
 
+            //$tableName = $_SESSION['list'];
+
+/*            echo 'session "list" value is: '.$tableName;
+            echo '<br>';
+*/
+            $sql = 'SELECT * FROM '.$_SESSION['list'];
+/*            echo $sql.'<br>';*/
+
             // prepared sql
-            $stmt = $db->prepare('SELECT * FROM camper');
+            //$stmt = $db->prepare('SELECT * FROM ward');
+            $stmt = $db->prepare($sql);
+            //$stmt->bindParam(':table', $tableName);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             /*    while ($rows = $stmt->fetch(PDO::FETCH_ASSOC))
@@ -50,7 +62,7 @@
             }*/
             foreach($rows as $row)
             {
-                echo 'Camper Name:'.$row['firstname']." ".$row['lastname'];
+                echo 'Ward Name: '.$row['ward'];
                 echo '<br/>';
             }
 
