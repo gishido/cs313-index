@@ -15,7 +15,7 @@
         <!-- Display list -->
         <hr>
         <h3>1. Ward List: A list of all the wards that are participating in Camp Helaman.</h3>
-        <a href="camper-list.php">Show list of wards</a>  
+        <a href="ward-list.php">Show list of wards</a>  
 
         <!-- Simple Search -->
         <hr>
