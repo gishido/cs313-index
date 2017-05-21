@@ -9,6 +9,7 @@
     <body> 
     <h1>Register Camper</h1>
     <hr>
+    <h3>Camper Registered</h3>
         <?php
 
             // default Heroku Postgres configuration URL
@@ -52,8 +53,6 @@
 
             $wardname = "'".$ward."'"; 
 
-            echo 'wardname is: '.$wardname.'<br>';
-
             //get roleid
             $stmt = $db->prepare('SELECT roleid FROM role where rolename = :role');
             $stmt->bindParam(':role', $role);
@@ -70,12 +69,13 @@
             echo 'lastname: '.$lastName.'<br>';
             echo 'email: '.$email.'<br>';
             echo 'shirt: '.$shirtSize.'<br>';
+            echo 'wardname is: '.$wardname.'<br>';
             echo '<br>';*/
             
             //build sql
             //insert into camper
-/*            $sqlCamper = 'INSERT INTO camper (isMember, roleid, firstName, lastName, email, shirtSize) 
-            values(?,?,?,?,?,?);';*/
+            $sqlCamper = 'INSERT INTO camper (isMember, roleid, firstName, lastName, email, shirtSize) 
+            values(?,?,?,?,?,?);';
 
             $stmt = $db->prepare($sqlCamper);
             $stmt->bindParam(1, $isMember);
@@ -87,40 +87,27 @@
             $stmt->execute();
 
             $lastCamper = $db->lastInsertID();
-            echo $lastCamper;
-            echo '<br>';
+ /*           echo $lastCamper;
+            echo '<br>';*/
 
             //ward sql
-            $wardSelect = 'SELECT wardid FROM ward where ward = ?;';
-
-            //get wardid
-            $stmt = $db->prepare($wardSelect);
-            $stmt->bindParam(1, $wardname);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            echo '$row[wardid] is: '.$row['wardid'].'<br>';
-
-            foreach($rows as $row) {
-                echo '$row[wardid] is: '.$row['wardid'].'<br>';
+            $wardSelect = 'SELECT wardid, ward FROM ward WHERE ward = '.$wardname.' order by ward';
+            $statement = $db->query($wardSelect);
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+            {
                 $wardid = $row['wardid'];
             }
 
-            echo 'wardid is: '.$wardid.'<br>';
-
             //insert into camp
-            $sqlCamp = 'INSERT INTO camp (year, camperid, wardid) values (?,?,?);';
-
+            $sqlCamp = 'INSERT INTO camp (year, camperid, wardid) values ('.$year.','.$lastCamper.','.$wardid.')';
+/*            echo $sqlCamp.'<br>';*/
             // prepared sql
             $stmt = $db->prepare($sqlCamp);
-            $stmt->bindParam(1, $year);
-            $stmt->bindParam(1, $lastCamper);
-            $stmt->bindParam(1, $wardid);
             $stmt->execute();
 
             $lastCamp = $db->lastInsertID();
-            echo $lastCamp;
-            echo '<br>';
+/*            echo $lastCamp;
+            echo '<br>';*/
 
             //select camper info post registration
             $campInfo = 'SELECT year, cp.isMember, r.rolename, cp.firstname, cp.lastname
@@ -137,11 +124,11 @@
                         ; ';
             
             $stmt = $db->prepare($campInfo);
-            $stmt->bindParam(1, $lastCamp);
+            $stmt->bindParam(1, $lastCamper);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            echo '<table>';
+            echo '<table style="text-align:center">';
             echo '<tr>';
             echo '<th>Year</th>';
             echo '<th>Member</th>';
@@ -158,7 +145,7 @@
             {
                 echo '<tr>';
                 echo '<td>'.$row['year'].'</td>';
-                echo '<td>'.$row['isMember'].'</td>';
+                echo '<td>'.$row['ismember'].'</td>';
                 echo '<td>'.$row['rolename'].'</td>';
                 echo '<td>'.$row['firstname'].'</td>';
                 echo '<td>'.$row['lastname'].'</td>';

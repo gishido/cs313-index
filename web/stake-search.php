@@ -40,7 +40,7 @@
      
             //query
             $sql = 'SELECT ward, stake FROM ward 
-                    JOIN stake ON ward.stakdid = stake.stakeid 
+                    JOIN stake ON ward.stakeid = stake.stakeid 
                     where stake = ?';
 /*            echo $sql.'<br>';*/
 
