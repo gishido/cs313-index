@@ -4,9 +4,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Stake Search</title>
     </head>
     <body> 
     <h1>Stake Search</h1>
+    <hr>
         <?php
 
             // default Heroku Postgres configuration URL

@@ -4,9 +4,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Ward List</title>
     </head>
     <body> 
     <h1>Ward List</h1>
+    <hr>
         <?php
             // default Heroku Postgres configuration URL
             $dbUrl = getenv('DATABASE_URL');

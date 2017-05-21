@@ -34,7 +34,8 @@
         </form>
         
         <hr>
-        <h3>3. Some details of something I haven't written yet</h3>
+        <h3>3. Display existing registrants: A simple page that shows all the current registrants for camp.</h3>
+        <a href="camper-info.php">Camp registration list</a>
 
         <!-- create a form for data entry -->
         <hr>

@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Register Camper</title>
+        <title>Camper Info</title>
     </head>
     <body> 
-    <h1>Register Camper</h1>
+    <h1>Camper Info</h1>
     <hr>
         <?php
 
@@ -48,80 +48,9 @@
             $roleid;
             $wardid;
             $year = 2017;
-            $ward = $_POST['wardlist'];
-
-            $wardname = "'".$ward."'"; 
-
-            echo 'wardname is: '.$wardname.'<br>';
-
-            //get roleid
-            $stmt = $db->prepare('SELECT roleid FROM role where rolename = :role');
-            $stmt->bindParam(':role', $role);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            foreach($rows as $row) {
-                $roleid = $row['roleid'];
-            }
-            
-/*            echo 'roleid is: '.$roleid.'<br>';
-            echo 'isMember: '.$isMember.'<br>';
-            echo 'firstname: '.$firstName.'<br>';
-            echo 'lastname: '.$lastName.'<br>';
-            echo 'email: '.$email.'<br>';
-            echo 'shirt: '.$shirtSize.'<br>';
-            echo '<br>';*/
-            
+            $wardname = $_POST['wardlist'];
+           
             //build sql
-            //insert into camper
-/*            $sqlCamper = 'INSERT INTO camper (isMember, roleid, firstName, lastName, email, shirtSize) 
-            values(?,?,?,?,?,?);';*/
-
-            $stmt = $db->prepare($sqlCamper);
-            $stmt->bindParam(1, $isMember);
-            $stmt->bindParam(2, $roleid);
-            $stmt->bindParam(3, $firstName);
-            $stmt->bindParam(4, $lastName);
-            $stmt->bindParam(5, $email);
-            $stmt->bindParam(6, $shirtSize);
-            $stmt->execute();
-
-            $lastCamper = $db->lastInsertID();
-            echo $lastCamper;
-            echo '<br>';
-
-            //ward sql
-            $wardSelect = 'SELECT wardid FROM ward where ward = ?;';
-
-            //get wardid
-            $stmt = $db->prepare($wardSelect);
-            $stmt->bindParam(1, $wardname);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            echo '$row[wardid] is: '.$row['wardid'].'<br>';
-
-            foreach($rows as $row) {
-                echo '$row[wardid] is: '.$row['wardid'].'<br>';
-                $wardid = $row['wardid'];
-            }
-
-            echo 'wardid is: '.$wardid.'<br>';
-
-            //insert into camp
-            $sqlCamp = 'INSERT INTO camp (year, camperid, wardid) values (?,?,?);';
-
-            // prepared sql
-            $stmt = $db->prepare($sqlCamp);
-            $stmt->bindParam(1, $year);
-            $stmt->bindParam(1, $lastCamper);
-            $stmt->bindParam(1, $wardid);
-            $stmt->execute();
-
-            $lastCamp = $db->lastInsertID();
-            echo $lastCamp;
-            echo '<br>';
-
             //select camper info post registration
             $campInfo = 'SELECT year, cp.isMember, r.rolename, cp.firstname, cp.lastname
                             , cp.email, cp.shirtsize, w.stake, w.ward
@@ -133,15 +62,13 @@
                             on c.wardid = w.wardid
                         join role r
                             on cp.roleid = r.roleid
-                        where cp.camperid = ?
                         ; ';
             
             $stmt = $db->prepare($campInfo);
-            $stmt->bindParam(1, $lastCamp);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            echo '<table>';
+            echo '<table style="text-align:center">';
             echo '<tr>';
             echo '<th>Year</th>';
             echo '<th>Member</th>';
@@ -158,7 +85,7 @@
             {
                 echo '<tr>';
                 echo '<td>'.$row['year'].'</td>';
-                echo '<td>'.$row['isMember'].'</td>';
+                echo '<td>'.$row['ismember'].'</td>';
                 echo '<td>'.$row['rolename'].'</td>';
                 echo '<td>'.$row['firstname'].'</td>';
                 echo '<td>'.$row['lastname'].'</td>';
