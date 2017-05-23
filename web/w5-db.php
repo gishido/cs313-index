@@ -17,7 +17,7 @@
 
             if (empty($dbUrl)) {
             // example localhost configuration URL with postgres username and a database called cs313db
-            $dbUrl = "postgres://postgres:gishido@localhost:5432/registration";
+            $dbUrl = "postgres://svcphp:cs313rules!@localhost:5432/registration";
             }
 
             $dbopts = parse_url($dbUrl);
