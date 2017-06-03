@@ -32,6 +32,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="project.php">Project Milestone 1</a></li>
 <!--        <li><a href="#">Link</a></li>
         <li><a href="#">Link</a></li>-->
         <li class="dropdown">
@@ -39,6 +40,7 @@
           <ul class="dropdown-menu">
             <li><a href="shopping.php">Prove03 - Shopping Cart</a></li>
             <li><a href="w5-db.php">Prove05 - Data Access</a></li>
+            <li><a href="w6-db.php">Prove06 - Data Modification</a></li>
            <!-- <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>-->

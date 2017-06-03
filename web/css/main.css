@@ -31,7 +31,9 @@ body {
     font-weight: bold;
 }
 
-#firstRow {
+#firstRow,
+#project,
+#user-reg {
     margin-top: 50px;
 }
 
