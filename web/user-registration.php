@@ -62,7 +62,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <form class="form horizontal" id="form-label" action="" method="post">
+                <form class="form horizontal" id="form-label" action="user-confirm.php" method="post">
                     <div class="form-group col-sm-9 col-sm-offset-3">
                         <label class="control-label col-sm-2" for="fname">First Name</label>
                         <div class="col-sm-4">
@@ -96,7 +96,7 @@
                     <div class="form-group col-sm-9 col-sm-offset-3">
                         <label class="control-label  col-sm-2" for="shirt">Shirt Size</label>
                         <div class=" col-sm-4">
-                            <input class="form-control" type="text" name="lname" id="lname">
+                            <input class="form-control" type="text" name="shirt" id="shirt">
                         </div>
                     </div>
                     <div class="form-group col-sm-9 col-sm-offset-3">
@@ -141,7 +141,7 @@
                             <input class="form-control" type="email" name="email" id="email">
                         </div>
                     </div>
-                    <div class="form-group col-sm-offset-5  col-sm-7">
+                    <div class="form-group col-sm-offset-5 col-sm-7">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
