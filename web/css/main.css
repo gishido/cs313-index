@@ -37,6 +37,10 @@ body {
     margin-top: 50px;
 }
 
+#form-label {
+    text-align: left;
+}
+
 #showcase img {
     width: 90%;
     margin-left: 60px;

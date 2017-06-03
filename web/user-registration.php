@@ -58,7 +58,93 @@
             <div class="row">
                 <h1>Register Camper</h1>
                 <hr>
-
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <form class="form horizontal" id="form-label" action="" method="post">
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label class="control-label col-sm-2" for="fname">First Name</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="fname" id="fname">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label class="control-label col-sm-2" for="lname">Last Name</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="lname" id="lname">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label class="control-label  col-sm-2" for="role">Role at camp</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="rolelist" id="role">
+                            <?php
+                                $rolesql = 'SELECT rolename FROM role order by role';
+                                $statement = $db->prepare($rolesql);
+                                $statement->execute();
+                                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+                                
+                                foreach($rows as $row)
+                                {
+                                    echo "<option value='".$row['rolename']."'>".$row['rolename']."</option>";
+                                }
+                            ?>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label class="control-label  col-sm-2" for="shirt">Shirt Size</label>
+                        <div class=" col-sm-4">
+                            <input class="form-control" type="text" name="lname" id="lname">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label class="control-label  col-sm-2" for="ward">Ward</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="wardlist" id="ward">
+                            <?php
+                                $rolesql = 'SELECT ward FROM ward order by ward';
+                                $statement = $db->prepare($rolesql);
+                                $statement->execute();
+                                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+                                
+                                foreach($rows as $row)
+                                {
+                                    echo "<option value='".$row['ward']."'>".$row['ward']."</option>";
+                                }
+                            ?>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label class="control-label  col-sm-2" for="stake">Stake</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="stakelist" id="stake">
+                            <?php
+                                $rolesql = 'SELECT stake FROM stake order by stake';
+                                $statement = $db->prepare($rolesql);
+                                $statement->execute();
+                                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+                                
+                                foreach($rows as $row)
+                                {
+                                    echo "<option value='".$row['stake']."'>".$row['stake']."</option>";
+                                }
+                            ?>
+                            </select>
+                        </div>
+                    </div> 
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label class="control-label  col-sm-2" for="email">Email</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="email" name="email" id="email">
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-offset-5  col-sm-7">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div> <!-- end row -->
         </div> <!-- end container -->
     </body>
