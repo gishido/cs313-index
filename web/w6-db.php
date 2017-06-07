@@ -86,5 +86,12 @@
         <a href="camper-info.php">Camp registration list</a>
 
         <hr>
+
+        <h3>4. Find a person: A quick search for registered campers</h3>
+        <form action="camper-search.php" method="post">
+            <label for="search">Search Camper</label>
+            <input type="text" name="search">
+            <input type="submit" value="Search">
+        </form>
     </body>
 </html>
