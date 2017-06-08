@@ -57,14 +57,15 @@
                 echo '<th>Ward</th>';*/
                 echo '</tr>';
                 //print to screen
-                $int = 0;
                 foreach($rows as $row)
                 {
 
                     echo '<tr>';
                     echo '<td><form action="camper-edit.php" method="post">';
                     echo '<input type="hidden" name="camperid" value="'.$row['camperid'].'">'; 
-                    echo '<input type="submit" value="Edit"></form></td>';
+                    echo '<input type="submit" name="action" value="Edit">';
+                    echo '<input type="submit" name="action" value="Delete">';
+                    echo '</form></td>';
                     echo '<td>'.$row['camperid'].'</td>';
                     echo '<td>'.$row['year'].'</td>';
                     echo '<td>'.$row['ismember'].'</td>';
@@ -76,8 +77,6 @@
     /*                echo '<td>'.$row['stake'].'</td>';
                     echo '<td>'.$row['ward'].'</td>';*/
                     echo '</tr>';
-
-                    $int++;
                 }
 
                 echo '</table>';

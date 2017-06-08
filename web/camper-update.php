@@ -2,7 +2,7 @@
     session_start();
     require("connectdb.php");
     $db = get_db();
-    
+
     $role = $_POST['role'];
     $firstName = $_POST['firstname'];
     $lastName = $_POST['lastname'];
@@ -10,6 +10,7 @@
     $shirtSize = $_POST['shirt'];
     $ward = $_POST['ward'];
     $camperid = $_POST['camperid'];
+
 
     //get roleid
     $selectRole = "SELECT roleid FROM role WHERE rolename = '".$role."'";

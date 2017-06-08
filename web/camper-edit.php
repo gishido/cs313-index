@@ -13,6 +13,7 @@
         <h1>Edit Registration</h1>
         <hr>
         <?php
+
             $camperid;
             if(isset($_SESSION['updated']))
             {
@@ -23,6 +24,18 @@
                 $camperid = $_POST['camperid'];
             }
             
+            $deleteCamp = "DELETE FROM camp WHERE camperid = ".$camperid;
+            $deleteCamper = "DELETE FROM camper WHERE camperid = ".$camperid;
+            /*echo '$deleteCamp text is: '.$deleteCamp.'<br>'; 
+            echo '$deleteCamper text is: '.$deleteCamper.'<br>';*/ 
+
+            if($_POST['action']=="Delete")
+            {
+                $stmt1 = $db->prepare($deleteCamp);
+                $stmt2 = $db->prepare($deleteCamper);
+                $stmt1->execute();
+                $stmt2->execute();
+            }
 
             $findSQL = "SELECT * FROM camper 
                             WHERE camperid = ".$camperid;
@@ -122,7 +135,16 @@
             ?>
             <label for="stake">Stake</label>
             <input type="text" name="stake" value="<?php echo $stake ?>" readonly><br>
-            <input type="submit" value="Update">
+            <?php
+                if($_POST['action']=="Delete")
+                {
+                    echo '<input type="submit" value="Update" disabled>';
+                }
+                else
+                {
+                    echo '<input type="submit" value="Update">';
+                }
+            ?>
             <input type="hidden" name="camperid" value="<?php echo $camperid ?>">
             <br>
             <br>
@@ -136,8 +158,12 @@
                     echo '<p><strong>Record has been updated</strong></p>';
                     $_SESSION['updated'] = NULL;
                     $_SESSION['camperid'] = NULL;
+                }
 
-
+                if($_POST['action']=="Delete")
+                {
+                    echo '<br>';
+                    echo '<p><strong>Record has been deleted</strong></p>';
                 }
             ?>
         </form>
