@@ -18,7 +18,7 @@
     </head>
     <body> 
         <h1>Campers</h1>
-        <hr>
+        <hr/>
         <?php
             $myUser = htmlspecialchars($_POST['search']);
             /*echo "$myUser text is: ".$myUser;
@@ -44,6 +44,8 @@
             {
                 echo '<table style="text-align:center">';
                 echo '<tr>';
+                echo '<th>Edit</th>';
+                echo '<th>camperid</th>';
                 echo '<th>Year</th>';
                 echo '<th>Member</th>';
                 echo '<th>Role</th>';
@@ -55,9 +57,15 @@
                 echo '<th>Ward</th>';*/
                 echo '</tr>';
                 //print to screen
+                $int = 0;
                 foreach($rows as $row)
                 {
+
                     echo '<tr>';
+                    echo '<td><form action="camper-edit.php" method="post">';
+                    echo '<input type="hidden" name="camperid" value="'.$row['camperid'].'">'; 
+                    echo '<input type="submit" value="Edit"></form></td>';
+                    echo '<td>'.$row['camperid'].'</td>';
                     echo '<td>'.$row['year'].'</td>';
                     echo '<td>'.$row['ismember'].'</td>';
                     echo '<td>'.$row['roleid'].'</td>';
@@ -69,6 +77,7 @@
                     echo '<td>'.$row['ward'].'</td>';*/
                     echo '</tr>';
 
+                    $int++;
                 }
 
                 echo '</table>';
@@ -76,9 +85,7 @@
 
                 searchAgain();
             }
-            
-
-            
+                 
         ?>
     </body>
 </html>
