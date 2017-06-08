@@ -94,5 +94,7 @@
             <input type="text" name="search">
             <input type="submit" value="Search">
         </form>
+        <div style="margin-bottom: 70px">
+        </div>
     </body>
 </html>
