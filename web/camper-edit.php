@@ -77,6 +77,8 @@
             <input type="text" name="firstname" value="<?php echo $firstName ?>"><br>
             <label for="lastname">Last Name</label>
             <input type="text" name="lastname" value="<?php echo $lastName ?>"><br>
+            <label for="email">Email</label>
+            <input type="text" name="email" value="<?php echo $email ?>"><br>
             <label for="role">Role</label>
             <?php
                 $rolesql = 'SELECT rolename FROM role order by role';
@@ -104,7 +106,7 @@
                 $wardsql = 'SELECT ward FROM ward order by ward';
                 $statement = $db->query($wardsql);
                 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
-                echo '<select name="wardlist">';
+                echo '<select name="ward">';
                 foreach($rows as $row)
                 {
                     if($row['ward'] == $ward)
@@ -122,13 +124,18 @@
             <input type="text" name="stake" value="<?php echo $stake ?>" readonly><br>
             <input type="submit" value="Update">
             <input type="hidden" name="camperid" value="<?php echo $camperid ?>">
+            <br>
+            <br>
+            <input type="button" value="Back to Search" onclick="location.href='camper-search.php';">
+            <input type="button" value="Return to Main" onclick="location.href='w6-db.php';">
 
             <?php
                 if(isset($_SESSION['updated']))
                 {
                     echo '<br>';
-                    echo '<p><span font-wight:"bold">Record has been updated</span></p>';
+                    echo '<p><strong>Record has been updated</strong></p>';
                     $_SESSION['updated'] = NULL;
+                    $_SESSION['camperid'] = NULL;
 
 
                 }
