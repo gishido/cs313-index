@@ -62,12 +62,12 @@
             <input type="submit" value="Register">
         </form>
 
-        <h3>1. Ward List: A list of all the wards that are participating in Camp Helaman.</h3>
+        <h3>2. Ward List: A list of all the wards that are participating in Camp Helaman.</h3>
         <a href="ward-list.php">Show list of wards</a>  
 
         <!-- Simple Search -->
         <hr>
-        <h3>2. Stake Search: A simple form that allows a search for a stake. If found, a list of all the wards in a stake will be displayed.</h3>
+        <h3>3. Stake Search: A simple form that allows a search for a stake. If found, a list of all the wards in a stake will be displayed.</h3>
         
         <form action="stake-search.php" method="post">
             <input type="radio" name="stake" value="Auburn" checked>Auburn<br>
@@ -82,12 +82,12 @@
         </form>
         
         <hr>
-        <h3>3. Display existing registrants: A simple page that shows all the current registrants for camp.</h3>
+        <h3>4. Display existing registrants: A simple page that shows all the current registrants for camp.</h3>
         <a href="camper-info.php">Camp registration list</a>
 
         <hr>
 
-        <h3>4. Find/Edit/Delete a person: Search for registered campers, edit or delete them</h3>
+        <h3>5. Find/Edit/Delete a person: Search for registered campers, edit or delete them</h3>
         <p>Through this search, you'll be able to return names of people that have similar first or last names to the search.  If there are no results, a message will display.  From the search screen, you'll be able to perform multiple searches or return to "main".  You can edit or delete a record.  If you delete a record, it will disable the "update" button.  If you edite a field, it will update that relevant record on the backend database and display a message.  From the edit menu, you'll be able to search again or return to main'  From main, you can register a new camper, if there is desire.</p>
         <form action="camper-search.php" method="post">
             <label for="search">Search Camper</label>
