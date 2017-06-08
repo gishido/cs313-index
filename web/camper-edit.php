@@ -13,7 +13,16 @@
         <h1>Edit Registration</h1>
         <hr>
         <?php
-            $camperid = $_POST['camperid'];
+            $camperid;
+            if(isset($_SESSION['updated']))
+            {
+                $camperid = $_SESSION['camperid'];
+            }
+            else
+            {
+                $camperid = $_POST['camperid'];
+            }
+            
 
             $findSQL = "SELECT * FROM camper 
                             WHERE camperid = ".$camperid;
@@ -31,54 +40,11 @@
                     where cp.camperid = ?
                     ; ';
 
-            echo "$campInfo text is: ".$campInfo;
+            /*echo '$campInfo text is: '.$campInfo;
             echo "<br>";
-            echo "$camperid is: ".$camperid;
+            echo '$camperid is: '.$camperid;
             echo "<br>";
-            echo "<br>";
-
-            /*$find = $db->prepare($findSQL);
-            $find->execute();
-            $rows = $find->fetchAll(PDO::FETCH_ASSOC);
-            {
-                echo '<table style="text-align:center">';
-                echo '<tr>';
-                echo '<th>Edit</th>';
-                echo '<th>Year</th>';
-                echo '<th>Member</th>';
-                echo '<th>Role</th>';
-                echo '<th>First Name</th>';
-                echo '<th>Last Name</th>';
-                echo '<th>Email</th>';
-                echo '<th>Shirt Size</th>';
-    /*            echo '<th>Stake</th>';
-                echo '<th>Ward</th>';
-                echo '</tr>';
-                //print to screen
-                foreach($rows as $row)
-                {
-
-                    echo '<tr>';
-                    echo '<td><form action="camper-edit.php" method="post"><input type="submit" value="Edit"></form>';
-                    echo '<input type="hidden" name="camperid" value="'.$row['camperid'].'"></td>';
-                    echo '<td>'.$row['year'].'</td>';
-                    echo '<td>'.$row['ismember'].'</td>';
-                    echo '<td>'.$row['roleid'].'</td>';
-                    echo '<td>'.$row['firstname'].'</td>';
-                    echo '<td>'.$row['lastname'].'</td>';
-                    echo '<td>'.$row['email'].'</td>';
-                    echo '<td>'.$row['shirtsize'].'</td>';
-    /*                echo '<td>'.$row['stake'].'</td>';
-                    echo '<td>'.$row['ward'].'</td>';*/
-                    /*echo '</tr>';
-
-                }
-
-                echo '</table>';
-                echo '<br>';
-
-            }*/
-
+            echo "<br>";*/
             
             $stmt = $db->prepare($campInfo);
             $stmt->bindParam(1, $camperid);
@@ -112,12 +78,50 @@
             <label for="lastname">Last Name</label>
             <input type="text" name="lastname" value="<?php echo $lastName ?>"><br>
             <label for="role">Role</label>
-            <input type="text" name="role" value="<?php echo $role ?>"><br>
+            <?php
+                $rolesql = 'SELECT rolename FROM role order by role';
+                $statement = $db->query($rolesql);
+                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+                echo '<select name="role">';
+                foreach($rows as $row)
+                {
+                    if($row['rolename'] == $role)
+                    {
+                        echo "<option value='".$row['rolename']."' selected>".$row['rolename']."</option>";
+                    }
+                    else
+                    {
+                        echo "<option value='".$row['rolename']."'>".$row['rolename']."</option>";
+                    }
+                    
+                }
+                echo '</select><br>';
+            ?>
+            <label for="shirt">Shrit Size</label>
+            <input type="text" name="shirt" value="<?php echo $shirtSize ?>"><br>
             <label for="ward">Ward</label>
-            <input type="text" name="ward" value="<?php echo $ward ?>"><br>
+            <?php
+                $wardsql = 'SELECT ward FROM ward order by ward';
+                $statement = $db->query($wardsql);
+                $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+                echo '<select name="wardlist">';
+                foreach($rows as $row)
+                {
+                    if($row['ward'] == $ward)
+                    {
+                        echo "<option value='".$row['ward']."' selected>".$row['ward']."</option>";
+                    }
+                    else
+                    {
+                        echo "<option value='".$row['ward']."'>".$row['ward']."</option>";
+                    }
+                }
+                echo '</select><br>';
+            ?>
             <label for="stake">Stake</label>
-            <input type="text" name="stake" value="<?php echo $stake ?>"><br>
+            <input type="text" name="stake" value="<?php echo $stake ?>" readonly><br>
             <input type="submit" value="Update">
+            <input type="hidden" name="camperid" value="<?php echo $camperid ?>">
 
             <?php
                 if(isset($_SESSION['updated']))
@@ -125,6 +129,8 @@
                     echo '<br>';
                     echo '<p><span font-wight:"bold">Record has been updated</span></p>';
                     $_SESSION['updated'] = NULL;
+
+
                 }
             ?>
         </form>
