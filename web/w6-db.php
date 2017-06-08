@@ -87,7 +87,8 @@
 
         <hr>
 
-        <h3>4. Find a person: A quick search for registered campers</h3>
+        <h3>4. Find/Edit/Delete a person: Search for registered campers, edit or delete them</h3>
+        <p>Through this search, you'll be able to return names of people that have similar first or last names to the search.  If there are no results, a message will display.  From the search screen, you'll be able to perform multiple searches or return to "main".  You can edit or delete a record.  If you delete a record, it will disable the "update" button.  If you edite a field, it will update that relevant record on the backend database and display a message.  From the edit menu, you'll be able to search again or return to main'  From main, you can register a new camper, if there is desire.</p>
         <form action="camper-search.php" method="post">
             <label for="search">Search Camper</label>
             <input type="text" name="search">
