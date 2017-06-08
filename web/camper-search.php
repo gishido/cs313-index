@@ -9,6 +9,7 @@
         echo '<label for="search">Search Camper</label>';
         echo '<input type="text" name="search">';
         echo '<input type="submit" value="Search Again">';
+        echo '<input type="button" value="Return to Main" onclick="location.href='."'w6-db.php'".';">';
     }
 ?>
 <!DOCTYPE html>
@@ -25,9 +26,23 @@
             echo "<br>";*/
 
             /*$findSQL = "select * from camper where (firstname like '%Adam%') or (lastname like '%Adam%')";*/
-            $findSQL = "SELECT * FROM camper 
+            /*$findSQL = "SELECT * FROM camper 
                         WHERE (firstname like '%".$myUser."%') 
-                            or (lastname like '%".$myUser."%')";
+                            or (lastname like '%".$myUser."%')";*/
+
+            $findSQL = "SELECT year, cp.camperid, cp.isMember, r.rolename, cp.firstname, cp.lastname
+                        ,cp.email, cp.shirtsize, w.stake, w.ward
+                    from camp c
+                    join camper cp
+                        on c.camperid = cp.camperid
+                    join (select w.wardid, s.stake, w.ward from ward w
+                        join stake s on w.stakeid = s.stakeid) as w
+                        on c.wardid = w.wardid
+                    join role r
+                        on cp.roleid = r.roleid
+                    WHERE (firstname like '%".$myUser."%') 
+                            or (lastname like '%".$myUser."%')
+                    ORDER BY cp.camperid";
 
 /*            echo "$findSQL text is: ".$findSQL;
             echo "<br>";*/
@@ -69,7 +84,7 @@
                     echo '<td>'.$row['camperid'].'</td>';
                     echo '<td>'.$row['year'].'</td>';
                     echo '<td>'.$row['ismember'].'</td>';
-                    echo '<td>'.$row['roleid'].'</td>';
+                    echo '<td>'.$row['rolename'].'</td>';
                     echo '<td>'.$row['firstname'].'</td>';
                     echo '<td>'.$row['lastname'].'</td>';
                     echo '<td>'.$row['email'].'</td>';
