@@ -5,14 +5,14 @@
     $db = get_db();
 
     function searchAgain() {
-        echo '<form class="form horizontal" id="form-label" action="camper-search.php" method="post">';
+        echo '<form class="form horizontal" id="form-label" action="search-camper.php" method="post">';
         echo '<div class="form-group col-sm-9">';
         echo '<label class="control-label col-sm-2" for="search">Search Camper</label>';
         echo '<div class="col-sm-4">';
         echo '<input class="form-control" type="text" name="search">';
         echo '</div>';
         echo '<input class="btn btn-primary" type="submit" value="Search Again">';
-        echo '<input class="btn btn-default" type="button" value="Return to Main" onclick="location.href='."'w6-db.php'".';">';
+        echo '<input class="btn btn-default" type="button" value="Return to Main" onclick="location.href='."'project.php'".';">';
         echo '</div>';
     }
 

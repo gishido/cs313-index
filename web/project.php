@@ -63,7 +63,7 @@
                 <h1>Camp Registration</h1>
                 <h3>********* WELCOME <?php echo $userLogged;?> *********</h3>
                 <hr>
-                <form class="form horizonal" action="camper-search.php" method="post">
+                <form class="form horizonal" action="search-camper.php" method="post">
                     <div class="form-group row">
                         <div class="form-group col-sm-12 col-sm-offset-2">
                             <label class="control-label col-sm-2" for="search">Search Camper</label>
