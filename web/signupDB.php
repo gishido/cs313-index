@@ -15,6 +15,9 @@
             {
                 session_start();
                 $_SESSION['username'] = $row['username'];
+                $_SESSION['start'] = time(); // Taking now logged in time.
+                // Ending a session in 5 minutes from the starting time.
+                $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
                 header('Location: ' . "project.php");
                 die();
             }

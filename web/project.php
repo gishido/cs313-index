@@ -8,6 +8,16 @@
         header('location:'.'signin.php');
         die();
     }
+    else{
+        $now = time(); // Checking the time now when home page starts.
+
+        if ($now > $_SESSION['expire']) {
+            session_destroy();
+            echo "Your session has expired! <a href='signin.php'>Login here</a>";
+        }
+
+    }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,6 +72,7 @@
             <div class="row">
                 <h1>Camp Registration</h1>
                 <h3>********* WELCOME <?php echo $userLogged;?> *********</h3>
+                <br><a href="logOut.php">Log Out</a>
                 <hr>
                 <form class="form horizonal" action="search-camper.php" method="post">
                     <div class="form-group row">

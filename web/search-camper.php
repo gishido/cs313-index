@@ -139,7 +139,7 @@
                 {
 
                     echo '<tr>';
-                    echo '<td><form class="form" action="camper-edit.php" method="post">';
+                    echo '<td><form class="form" action="edit-camper.php" method="post">';
                     echo '<input type="hidden" name="camperid" value="'.$row['camperid'].'">'; 
                     echo '<input class="btn btn-primary" type="submit" name="action" value="Edit">';
                     echo '<input class="btn btn-warning" type="submit" name="action" value="Delete">';
