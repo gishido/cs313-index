@@ -67,7 +67,7 @@
                 <div class="form-group col-sm-9 col-sm-offset-3">
                     <div class="col-sm-4 col-sm-offset-2">
                         <input class="btn btn-primary" type="submit" name="submit" value="SIGN-IN">
-                        <input class="btn btn-default" type="button" id="button2" onclick="location.href='signupDB.php';" value="SIGN-UP" />
+                        <input class="btn btn-default" type="button" id="button2" onclick="location.href='create-login.php'" value="SIGN-UP" />
                     </div>
                 </div> 
             </form>

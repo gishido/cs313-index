@@ -81,8 +81,10 @@
                             <input class="form-control" type="password" name="password"><br />
                         </div>
                     </div>
-                    <div class="form-group col-sm-offset-6 col-sm-6">
-                        <button type="submit" class="btn btn-primary">SIGN-UP</button>
+                    <div class="form-group col-sm-offset-3 col-sm-9">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary">SIGN-UP</button>
+                        </div>
                     </div>
                 </form>
             </div>
