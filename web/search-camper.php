@@ -14,6 +14,7 @@
         echo '<input class="btn btn-primary" type="submit" value="Search Again">';
         echo '<input class="btn btn-default" type="button" value="Return to Main" onclick="location.href='."'project.php'".';">';
         echo '</div>';
+        echo '</form>';
     }
 
 /*    <form class="form horizonal" action="camper-search.php" method="post">

@@ -176,5 +176,18 @@
                 ?>
             </div>
         </div>
+        <div class="container">
+            <hr>
+            <form class="form horizontal" id="form-label" action="search-camper.php" method="post">
+                <div class="form-group col-sm-9">
+                    <label class="control-label col-sm-2" for="search">Search Camper</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="search">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Search Again">
+                    <input class="btn btn-default" type="button" value="Return to Main" onclick="location.href='project.php'">
+                </div>
+            </form>
+        </div>
     </body>
 </html>
