@@ -55,18 +55,20 @@
                 <div class="form-group col-sm-9 col-sm-offset-3">
                     <label class="control-label col-sm-2" for="username">Username:</label>
                     <div class="col-sm-4">
-                        <input type="text" name="username"><br />
+                        <input class="form-control" type="text" name="username"><br />
                     </div>
                 </div>
                 <div class="form-group col-sm-9 col-sm-offset-3">
                     <label class="control-label col-sm-2" for="password">Password:</label>
                     <div class="col-sm-4">
-                        <input type="password" name="password"><br />
+                        <input class="form-control" type="password" name="password"><br />
                     </div>
                 </div>
-                <div class="form-group col-sm-12 col-sm-offset-3">
-                    <input type="submit" name="submit" value="SIGN-IN">
-                    <input type="button" id="button2" onclick="location.href='signup.php';" value="SIGN-UP" />
+                <div class="form-group col-sm-9 col-sm-offset-3">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" name="submit" value="SIGN-IN">
+                        <input class="btn btn-default" type="button" id="button2" onclick="location.href='signup.php';" value="SIGN-UP" />
+                    </div>
                 </div> 
             </form>
         </div>

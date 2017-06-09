@@ -141,8 +141,11 @@
                             <input class="form-control" type="email" name="email" id="email">
                         </div>
                     </div>
-                    <div class="form-group col-sm-offset-5 col-sm-7">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group col-sm-9 col-sm-offset-3">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div> <!-- end row -->
