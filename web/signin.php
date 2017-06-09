@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    require("connectdb.php");
-
-    $db = get_db();
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -54,12 +48,40 @@
             </div><!-- /.container-fluid -->
         </nav>
         <div class="container" id="project">
-            <div class="row">
-                <h1>Camp Registration</h1>
-                <hr>
-                <a href="user-registration.php">Register for Camp</a><br>
-                <input type="button" value="Create Login" onclick="location.href='create-login.php'">
-            </div> <!-- end row -->
-        </div> <!-- end container -->
+            <h3>SIGN-IN: Enter with your username and password</h3>
+        </div>
+        <div class="container">
+            <form class="form horizonal" id="form-label" action="signupDB.php" method="POST">
+                <div class="form-group col-sm-9 col-sm-offset-3">
+                    <label class="control-label col-sm-2" for="username">Username:</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="username"><br />
+                    </div>
+                </div>
+                <div class="form-group col-sm-9 col-sm-offset-3">
+                    <label class="control-label col-sm-2" for="password">Password:</label>
+                    <div class="col-sm-4">
+                        <input type="password" name="password"><br />
+                    </div>
+                </div>
+                <div class="form-group col-sm-12 col-sm-offset-3">
+                    <input type="submit" name="submit" value="SIGN-IN">
+                    <input type="button" id="button2" onclick="location.href='signup.php';" value="SIGN-UP" />
+                </div> 
+            </form>
+        </div>
+            
+        <hr>
+
+<?php
+
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+
     </body>
 </html>

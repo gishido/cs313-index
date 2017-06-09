@@ -118,7 +118,7 @@
                         </div>
                     </div> 
                     <div class="form-group col-sm-9 col-sm-offset-3">
-                        <label class="control-label  col-sm-2" for="stake">Stake</label>
+                        <label class="control-label col-sm-2" for="stake">Stake</label>
                         <div class="col-sm-4">
                             <select class="form-control" name="stakelist" id="stake">
                             <?php

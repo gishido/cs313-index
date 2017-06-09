@@ -1,8 +1,8 @@
 <?php
     session_start();
-    require("connectdb.php");
+/*    require("connectdb.php");
 
-    $db = get_db();
+    $db = get_db();*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,11 +55,37 @@
         </nav>
         <div class="container" id="project">
             <div class="row">
-                <h1>Camp Registration</h1>
+                <h1>Create Login</h1>
                 <hr>
-                <a href="user-registration.php">Register for Camp</a><br>
-                <input type="button" value="Create Login" onclick="location.href='create-login.php'">
-            </div> <!-- end row -->
-        </div> <!-- end container -->
+            </div>
+        </div>        
+        <div class="container">
+            <div class="row">
+                <div><h3>SIGN-UP: Create your username and password</h3></div>
+                <form class="form horizonal" id="form-label" action="signupDB.php" method="POST">
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label for="username" class="control-label col-sm-2">Username:</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="username"><br />
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label for="email" class="control-label col-sm-2">Email:</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="text" name="email"><br />
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-9 col-sm-offset-3">
+                        <label for="password" class="control-label col-sm-2">Password:</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" type="password" name="password"><br />
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-offset-6 col-sm-6">
+                        <button type="submit" class="btn btn-primary">SIGN-UP</button>
+                    </div>
+                </form>
+            </div>
+        </div>                
     </body>
 </html>
