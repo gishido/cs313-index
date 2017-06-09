@@ -1,14 +1,3 @@
-<?php
-    session_start();
-    require("connectdb.php");
-
-    $db = get_db();
-    $userLogged = $_SESSION['username'];
-    if(empty($userLogged)) {
-        header('location:'.'signin.php');
-        die();
-    }
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -59,27 +48,23 @@
             </div><!-- /.container-fluid -->
         </nav>
         <div class="container" id="project">
-            <div class="row">
-                <h1>Camp Registration</h1>
-                <h3>********* WELCOME <?php echo $userLogged;?> *********</h3>
-                <hr>
-                <form class="form horizonal" action="camper-search.php" method="post">
-                    <div class="form-group row">
-                        <div class="form-group col-sm-12 col-sm-offset-2">
-                            <label class="control-label col-sm-2" for="search">Search Camper</label>
-                            <div class="col-sm-4">
-                                <input class="form-control" type="text" name="search">
-                            </div>
-                            <div class="col-sm-2">
-                                <input class="btn btn-primary" type="submit" value="Search">
-                            </div>
-                        </div>
-                    </div>
-                    <!--<div class="form-group col-sm-offset-3">
-                        
-                    </div>-->
-                </form>
-            </div> <!-- end row -->
-        </div> <!-- end container -->
+            <h2>SIGN-UP ERROR: The user already existss</h2>
+        </div>
+        <div class="container">
+            <input type="button" id="button2" onclick="location.href='create-login.php';" value="SIGN-UP" />
+        </div>
+            
+        <hr>
+
+<?php
+
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+
     </body>
 </html>
