@@ -55,9 +55,9 @@
                     <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assignments <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="shopping.php">Prove03 - Shopping Cart</a></li>
                         <li><a href="w5-db.php">Prove05 - Data Access</a></li>
                         <li><a href="w6-db.php">Prove06 - Data Modification</a></li>
+                        <li><a href="https://radiant-mesa-28428.herokuapp.com/">Prove09 - Postal Rate</a></li>
                     <!-- <li role="separator" class="divider"></li>
                         <li><a href="#">Separated link</a></li>
                         <li role="separator" class="divider"></li>-->
